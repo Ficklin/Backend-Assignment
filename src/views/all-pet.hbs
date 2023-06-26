@@ -1,0 +1,16 @@
+<h1>Uplifting Joy Pet Adoption</h1>
+<a href="/pet/add">Add New Pet</a>
+
+<div class="w3-card-4"></div>
+    {{#each petList}}
+         <img src="{{imgUrl}}" alt="{{breed}}">
+         <div class="w3-container w3-center">
+         <p>{{name}} </p>
+         <a class="centered-link" href="/pet/{{petId}}">View Details</a>
+         <a class="centered-link" href="/pet/edit/{{petId}}">Edit Details</a>
+         <form class="centered-form" action="/pet/delete/{{petId}}" method="POST">
+            <button class="centered-button" type="submit">Delete Item</button>
+        </form>
+     </div>
+    {{/each}}
+</div>
