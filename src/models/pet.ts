@@ -23,12 +23,10 @@ export function PetFactory(sequelize: Sequelize) {
             allowNull: false
         },
         type: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM('Birds','Cats', 'Dogs','Fishes','Horses','Rabbits', 'Reptiles'),
             allowNull: false,
-            validate: {
-                isIn: [['Birds','Cats', 'Dogs','Fishes','Horses','Rabbits', 'Reptiles']],
-              },
-            },
+            
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -40,19 +38,13 @@ export function PetFactory(sequelize: Sequelize) {
             unique: false
         },
         gender: {
-            type: DataTypes.STRING,
+            type: DataTypes.ENUM('Male', 'Female'),
             allowNull: false,
-            validate: {
-                isIn: [['Male', 'Female']],
-              },
-            },
+        },
         age: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isIn: [['Newborn', 'Young', 'Adult', 'Senior', 'Unknown']],
-              },
-            },
+            type: DataTypes.ENUM('Newborn', 'Young', 'Adult', 'Senior', 'Unknown'),
+            allowNull: false,   
+        },
             breed: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -78,3 +70,4 @@ export function PetFactory(sequelize: Sequelize) {
         sequelize
     });
 }
+

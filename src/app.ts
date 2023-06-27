@@ -29,7 +29,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // Syncing our database
 db.sync().then(() => {
-    console.info("Connected to the database!")
+    console.info("Connected to the database")
 });
 
 app.listen(3000);

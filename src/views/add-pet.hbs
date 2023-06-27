@@ -1,0 +1,51 @@
+<h1>Create a New Pet</h1>
+
+<form action="/pet/add" method="POST">
+  <label for="type">Pet Type: </label>
+  <select name="type">
+    <option value="">-- Select Type --</option>
+    <option value="Birds">Birds</option>
+    <option value="Cats">Cats</option>
+    <option value="Dogs">Dogs</option>
+    <option value="Fishes">Fishes</option>
+    <option value="Horses">Horses</option>
+    <option value="Rabbits">Rabbits</option>
+    <option value="Reptiles">Reptiles</option>
+  </select><br />
+
+  <label for="name">Pet Name: </label>
+  <input type="text" name="name" /><br />
+
+  <label for="imgUrl">Picture Hyperlink: </label>
+  <input type="text" name="imgUrl" /><br />
+
+  <label for="gender">Gender: </label>
+  <select name="gender">
+    <option value="">-- Select Type --</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select><br />
+
+  <label for="age">Age: </label>
+  <select name="age">
+    <option value="">-- Select Type --</option>
+    <option value="Newborn">Newborn</option>
+    <option value="Young">Young</option>
+    <option value="Adult">Adult</option>
+    <option value="Senior">Senior</option>
+    <option value="Unknown">Unknown</option>
+  </select><br />
+
+  <label for="breed">Breed: </label>
+  <input type="text" name="breed" /><br />
+
+  <label for="description">Description: </label>
+  <input type="text" name="description" /><br />
+
+  <button type="submit">Add New Pet</button>
+</form>
+</br>
+
+<form action="/" method="POST">
+    <button type="submit">Return to Pet List</button>
+</form>
