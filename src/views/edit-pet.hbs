@@ -2,16 +2,7 @@
 {{#with foundPet}}
 <form action="/pet/edit/{{petId}}" method="POST">
   <label for="type">Pet Type: </label>
-   <select name="type">
-    <option value="" {{#if (eq pet.type "")}}selected{{/if}}>-- Select Type --</option>
-    <option value="Birds" {{#if (eq pet.type "Birds")}}selected{{/if}}>Birds</option>
-    <option value="Cats" {{#if (eq pet.type "Cats")}}selected{{/if}}>Cats</option>
-    <option value="Dogs" {{#if (eq pet.type "Dogs")}}selected{{/if}}>Dogs</option>
-    <option value="Fishes" {{#if (eq pet.type "Fishes")}}selected{{/if}}>Fishes</option>
-    <option value="Horses" {{#if (eq pet.type "Horses")}}selected{{/if}}>Horses</option>
-    <option value="Rabbits" {{#if (eq pet.type "Rabbits")}}selected{{/if}}>Rabbits</option>
-    <option value="Reptiles" {{#if (eq pet.type "Reptiles")}}selected{{/if}}>Reptiles</option>
-  </select><br />
+  <input type="text" name="type" value="{{type}}"/><br />
 
   <label for="name">Pet Name: </label>
   <input type="text" name="name" value="{{name}}"/><br />
@@ -21,20 +12,11 @@
 
   <label for="gender">Gender: </label>
   <select name="gender">
-    <option value="" {{#if (eq pet.type "")}}selected{{/if}}>-- Select Type --</option>
-    <option value="Male" {{#if (eq pet.gender "Male")}}selected{{/if}}>Male</option>
-    <option value="Female" {{#if (eq pet.gender "Female")}}selected{{/if}}>Female</option>
-  </select><br />
+    <input type="text" name="gender" value="{{gender}}"/><br />
 
   <label for="age">Age: </label>
-   <select name="age">
-    <option value="" {{#if (eq pet.type "")}}selected{{/if}}>-- Select Type --</option>
-    <option value="Newborn" {{#if (eq pet.age "Newborn")}}selected{{/if}}>Newborn</option>
-    <option value="Young" {{#if (eq pet.age "Young")}}selected{{/if}}>Young</option>
-    <option value="Adult" {{#if (eq pet.age "Adult")}}selected{{/if}}>Adult</option>
-    <option value="Senior" {{#if (eq pet.age "Senior")}}selected{{/if}}>Senior</option>
-    <option value="Unknown" {{#if (eq pet.age "Unknown")}}selected{{/if}}>Unknown</option>
-  </select><br />
+  <select name="age">
+    <input type="text" name="age" value="{{age}}"/><br />
 
   <label for="breed">Breed: </label>
   <input type="text" name="breed" value="{{breed}}"/><br />
@@ -42,6 +24,16 @@
   <label for="description">Description: </label>
   <input type="text" name="description" value="{{description}}"/><br />
 
-  <button type="submit">Add New Pet</button>
+  <button type="submit">Update Detail</button>
 </form>
+</br>
+ <form action="/pet/delete/{{petId}}" method="POST">
+        <button type="submit">Delete Detail</button>
+      </form>
+</br>
 {{/with}}
+
+
+<form action="/" method="POST">
+    <button type="submit">Return to Pet List</button>
+</form>

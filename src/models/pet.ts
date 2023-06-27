@@ -13,6 +13,7 @@ export class Pet extends Model<InferAttributes<Pet>, InferCreationAttributes<Pet
     declare createdAt?: Date;
     declare updatedAt?: Date;
 }
+//changed design. I could not get the dropdown ENUM to work for type, gender and age to work on the edit page. 
 
 export function PetFactory(sequelize: Sequelize) {
     Pet.init({
@@ -23,9 +24,9 @@ export function PetFactory(sequelize: Sequelize) {
             allowNull: false
         },
         type: {
-            type: DataTypes.ENUM('Birds','Cats', 'Dogs','Fishes','Horses','Rabbits', 'Reptiles'),
+            type: DataTypes.STRING,
             allowNull: false,
-            
+            unique: false
         },
         name: {
             type: DataTypes.STRING,
@@ -38,12 +39,14 @@ export function PetFactory(sequelize: Sequelize) {
             unique: false
         },
         gender: {
-            type: DataTypes.ENUM('Male', 'Female'),
+            type: DataTypes.STRING,
             allowNull: false,
+            unique: false
         },
         age: {
-            type: DataTypes.ENUM('Newborn', 'Young', 'Adult', 'Senior', 'Unknown'),
-            allowNull: false,   
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: false   
         },
             breed: {
             type: DataTypes.STRING,
