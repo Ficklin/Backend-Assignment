@@ -1,18 +1,15 @@
-<br class="card">
   {{#with foundPet}}
-    <img src="{{imgUrl}}" alt="{{breed}}" style="width:25%" />
-    <div class="container">
-      <h4><b>Name: {{name}} </b></h4>
+  <div class="detail">
+      <img src="{{imgUrl}}" alt="{{breed}}" style="width:25%" />
+       <h1><b>Name: {{name}} </b></h1>
       <p><b>Gender:</b> {{gender}}</p>
       <p><b>Age:</b> {{age}}</p>
       <p><b>Breed:</b> {{breed}}</p>
       <p><b>Description:</b> {{description}}</p>
       <a href="/pet/edit/{{petId}}">Edit  Detail</a>
-      </div>
       </br>
       <form action="/" method="POST">
         <button type="submit">Return to Pet List</button>
       </form>
-    </div>
-  {{/with}}
-</div>
+ </div>
+ {{/with}}

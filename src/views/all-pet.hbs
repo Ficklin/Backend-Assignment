@@ -1,21 +1,22 @@
-<div><h1>Uplifting Joy Pet Adoption</h1>
+<div class="header"><h1>Uplifting Joy Pet Adoption</h1>
 <a href="/pet/add">Add New Pet</a>
 </div>
 </br>
 
-<div class="card-container"></div>
+<div class="grid-container">
 {{#each petList}}
-<div class="card">
-    <img src="{{imgUrl}}" alt="{{breed}}" style="width:25%" />
-    <div class="container">
-      <h4><b>{{name}}</b></h4>
-      <a href="/pet/{{petId}}">View Detail</a>
-      <a href="/pet/edit/{{petId}}">Edit Detail</a>
-      <form action="/pet/delete/{{petId}}" method="POST">
-        <button type="submit">Delete Detail</button>
-      </form>
-    </div>
-    </br>
- </div>
+  <div class="card grid-item">
+    <img src="{{imgUrl}}" alt="{{breed}}" style="width:40%" />
+      <div class="container">
+        <h4><b>{{name}}</b></h4>
+        <a href="/pet/{{petId}}">View Detail</a>
+        <a href="/pet/edit/{{petId}}" style="margin-left: 10px;">Edit Detail</a>
+        </br> </br>
+        <form action="/pet/delete/{{petId}}" method="POST">
+          <button type="submit">Delete Detail</button>
+        </form>
+      </div>
+  </div>
  {{/each}}
-</div>
+ </div>
+
